@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+/*
+ *
+ * {
+ *     charging: false,                // 是否正在充电
+ *     chargingTime: Infinity,         // 剩余多少秒充满电。
+ *     dischargingTime: 8940,          // 剩余多少秒放完电
+ *     level: 0.59,                    // 电量比（当前电量/电池容量）
+ *     onchargingchange: null,         // chargingchange事件的回调函数
+ *     onchargingtimechange: null,     // chargingtimechange事件的回调函数
+ *     ondischargingtimechange: null,  // dischargingtimechange事件的回调函数
+ *     onlevelchange: null             // levelchange事件的回调函数
+ * }
+ *
+ */
+
+navigator.getBattery().then(function(battery) {
+    console.log(battery);
+    console.log(battery.level);
+    
+    battery.addEventListener('levelchange', function() {
+        // TODO something
+    });
+});
+</script>
+</body>
+</html>
